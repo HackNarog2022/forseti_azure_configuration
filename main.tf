@@ -10,3 +10,8 @@ terraform {
 provider "azurerm" {
   features {}
 }
+
+resource "azurerm_resource_group" "hacknarog" {
+  location = "West Europe"
+  name     = "hacknarog"
+}
