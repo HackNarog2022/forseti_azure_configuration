@@ -1,0 +1,12 @@
+version: '3.6'
+
+services:
+  frontend:
+    image: hacknarog2022acr.azurecr.io/frontend
+    ports:
+      - 4200:80
+
+  api:
+    image: hacknarog2022acr.azurecr.io/api
+    environment:
+      - mongo.uri=$MONGO_URI
