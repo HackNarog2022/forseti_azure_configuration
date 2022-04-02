@@ -28,3 +28,10 @@ resource "random_uuid" "api_scope_id" {}
 #  }
 #}
 
+data "azuread_application" "forseti_api" {
+  display_name = "HackNarog API"
+}
+
+resource "azuread_application_password" "example" {
+  application_object_id = data.azuread_application.forseti_api.object_id
+}
