@@ -11,7 +11,10 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "hacknarog" {
-  location = "West Europe"
+provider "azuread" {
+  tenant_id = data.azurerm_aadb2c_directory.hacknarog.tenant_id
+}
+
+data "azurerm_resource_group" "hacknarog" {
   name     = "hacknarog"
 }
