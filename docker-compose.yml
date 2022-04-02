@@ -9,4 +9,4 @@ services:
   api:
     image: hacknarog2022acr.azurecr.io/api
     environment:
-      - mongo.uri=$MONGO_URI
+      - mongo.uri=${MONGO_URI}

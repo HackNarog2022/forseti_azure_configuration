@@ -16,5 +16,5 @@ provider "azuread" {
 }
 
 data "azurerm_resource_group" "hacknarog" {
-  name     = "hacknarog"
+  name = "hacknarog"
 }
