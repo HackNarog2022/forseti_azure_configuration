@@ -4,7 +4,7 @@ services:
   frontend:
     image: hacknarog2022acr.azurecr.io/frontend
     ports:
-      - 4200:80
+      - 80:80
 
   api:
     image: hacknarog2022acr.azurecr.io/api
