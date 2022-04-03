@@ -8,19 +8,14 @@ resource "azurerm_app_service_plan" "hacknarog" {
     size = "S1"
   }
 }
-output "test" {
+output "docker_compose_app_settings_template" {
   value = templatefile("docker-compose.yml", {
     MONGO_URI = azurerm_cosmosdb_account.hacknarog.connection_strings[0]
+    SENTIMENT_KEY = azurerm_cognitive_account.hacknarog.primary_access_key
   })
   sensitive = true
 }
 
-output "test2" {
-  value = base64encode(templatefile("docker-compose.yml", {
-    MONGO_URI = azurerm_cosmosdb_account.hacknarog.connection_strings[0]
-  }))
-  sensitive = true
-}
 #resource "azurerm_app_service" "hacknarog" {
 #  name                = "Forsetihacknarog"
 #  location            = "centralus"

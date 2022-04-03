@@ -10,3 +10,4 @@ services:
     image: hacknarog2022acr.azurecr.io/api
     environment:
       - mongo.uri=${MONGO_URI}
+      - sentiment.key=${SENTIMENT_KEY}
